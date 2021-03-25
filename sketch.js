@@ -6,7 +6,7 @@ let fart = 1;
 let poeng = 0;
 
 function setup() {            //Dette skjer én gang.
-  createCanvas(windowWidth, windowHeight);    
+  createCanvas(450, 450);    
   textAlign(CENTER);
   textSize(20);
 }  //SLUTT SETUP ---------------------------------
@@ -20,8 +20,8 @@ function draw() {            //Dette skjer i loop.
 function ball() {
   ellipse(ballx,bally,ballSize,ballSize);
   ballx = ballx - fart;
-  if (ballx <= 0-(ballSize/2)) {
-    ballx = windowWidth+(ballSize/2);
+  if (ballx <= -25) {
+    ballx = 475;
   }  
 }  //SLUTT BALL ----------------------------------
 
@@ -30,7 +30,7 @@ function mouseReleased() {
   if (avstandBall < ballSize/2) {
     fill('green');
     fart = fart + 1;
-    bally = random(ballSize/2, (windowHeight-ballSize/2));
+    bally = random(25, 425);
     poeng = poeng + 1;
   }
   if (avstandBall > ballSize/2) {
@@ -40,7 +40,7 @@ function mouseReleased() {
 }  //SLUTT MOUSERELEASE --------------------------
 
 function tekst() {
-  text("Poeng: " + poeng, windowWidth/2, 40);
+  text("Poeng: " + poeng, 225, 40);
 }
 
 
